@@ -10,7 +10,6 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -43,15 +42,14 @@ I am coding a library system with databases and GUI with the help of Ruby and SQ
 
 ### Key Features <a name="key-features"></a>
 
+- Implemented classes and objects in Ruby.
+- Implemented encapsulation and inheritance with Ruby.
+- And it can be ran through IRB command line
+
 This repository does not have any key features currently.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-Currently, this is not an available feature
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -127,7 +125,7 @@ Nor is it deployed in any other website or service.
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [Isues Pages](https://github.com/lilskyex0x/Ruby-Enumerable/issues)
+Feel free to check the [Isues Pages](https://github.com/Arch-Noize/oop-library/issues)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
