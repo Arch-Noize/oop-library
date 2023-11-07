@@ -1,6 +1,6 @@
 require_relative 'nameable'
 
-class Person
+class Person < Nameable
   def initialize(age:, name: 'Unknown', parent_permission: true)
     @id = Random.rand(1..1000)
     @age = age
@@ -8,12 +8,16 @@ class Person
     @parent_permission = parent_permission
   end
 
-  # Getters - changed by rubocop
+  # Getters & Setters - changed by rubocop
   attr_reader :id
 
   attr_accessor :age, :name
 
-  # Setters
+  # Methods
+  
+  def correct_name
+    @name
+  end
 
   def can_use_services?
     return true if @parent_permission || of_age?
