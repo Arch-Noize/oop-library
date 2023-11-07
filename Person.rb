@@ -1,47 +1,34 @@
 class Person
-    def initialize(age, name = "Unknown", parent_permission = true)
-      @id = Random.rand(1..1000)
-      @age = age
-      @name = name
-      @parent_permission = parent_permission
-    end
+  def initialize(age:, name: 'Unknown', parent_permission: true)
+    @id = Random.rand(1..1000)
+    @age = age
+    @name = name
+    @parent_permission = parent_permission
+  end
 
-    # Getters
-    def id 
-      @id
-    end
+  # Getters - changed by rubocop
+  attr_reader :id
 
-    def age 
-      @age
-    end
+  attr_accessor :age, :name
 
-    def name 
-      @name
-    end
+  # Setters
 
-    # Setters
-    def name=(name) 
-      @name = name
-    end
+  def can_use_services?
+    return true if @parent_permission || of_age?
 
-    def age=(age) 
-        @age = age
-    end
+    false
+  end
 
-    def can_use_services?
-        return true if @parent_permission || of_age?
-        false
-    end
+  private
 
-    private
+  def of_age?
+    return true if @age >= 18
 
-    def of_age?
-        return true if @age >= 18 
-        false
-    end
+    false
+  end
 end
 
-person = Person.new(24, 'Santiago', false)
+person = Person.new(age: 24, name: 'Santiago', parent_permission: false)
 
 puts person.name
 puts person.age
