@@ -46,6 +46,11 @@ I am coding a library system with databases and GUI with the help of Ruby and SQ
 - Implemented encapsulation and inheritance with Ruby.
 - And it can be ran through IRB command line
 
+This repository does not have any key features currently.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
