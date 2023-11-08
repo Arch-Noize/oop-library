@@ -14,7 +14,7 @@ class Person < Nameable
   # Getters & Setters - changed by rubocop
   attr_reader :id
 
-  attr_accessor :age, :name
+  attr_accessor :age, :name, :rentals
 
   # Methods
 
@@ -26,6 +26,12 @@ class Person < Nameable
     return true if @parent_permission || of_age?
 
     false
+  end
+
+  def add_rental(date, book)
+    Rental.new(date, self, book)
+    @rentals.push(rentals)
+    rentals
   end
 
   private
