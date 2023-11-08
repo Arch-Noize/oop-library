@@ -109,9 +109,9 @@ Nor is it deployed in any other website or service.
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Adding basic classes
-- Add Decorator designing
-- Set up associations and relations
+~~- Adding basic classes~~
+~~- Add Decorator designing~~
+~~- Set up associations and relations~~
 - Add basic UI to app
 - Refract my code
 - Make data be preserved
