@@ -5,11 +5,11 @@ require_relative 'rental'
 require_relative 'student'
 require_relative 'teacher'
 
-Class App
+class App
     attr_accessor :books, :people, :rentals
 
     def initialize
-        @books = books
+        @books = []
         @rentals = []
         @people = []
     end
@@ -22,4 +22,7 @@ Class App
         end
     end
 
+    def run
+        screen
+    end
 end
