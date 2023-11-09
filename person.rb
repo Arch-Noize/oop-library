@@ -3,7 +3,7 @@ require_relative 'capitalize_decorator'
 require_relative 'trimmer_decorator'
 
 class Person < Nameable
-  def initialize(age:, name: 'Unknown', parent_permission: true)
+  def initialize(age, name = 'Unknown', parent_permission = true)
     super()
     @id = Random.rand(1..1000)
     @age = age
@@ -44,7 +44,7 @@ class Person < Nameable
   end
 end
 
-person = Person.new(age: 22, name: 'maximilianus')
+person = Person.new(22, 'maximilianus')
 person.correct_name
 capitalized = CapitalizeDecorator.new(person)
 puts capitalized.correct_name
