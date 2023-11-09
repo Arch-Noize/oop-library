@@ -18,6 +18,3 @@ class Student < Person
   end
 end
 
-student = Student.new(age: 26, name: 'Paula', parent_permission: false, classroom: 'Grammar')
-
-puts student.name

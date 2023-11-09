@@ -10,7 +10,3 @@ class Teacher < Person
     true
   end
 end
-
-teacher = Teacher.new(age: 50, name: 'Mylene', parent_permission: false, specialization: 'Grammar')
-
-puts teacher.name
