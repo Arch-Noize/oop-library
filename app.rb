@@ -68,7 +68,7 @@ class App
     puts 'Specialization: '
     specialization = gets.chomp.to_s
 
-    @people.push(Teacher.new(specialization, age, name))
+    @people.push(Teacher.new(specialization, age, name, parent_permission: true))
   end
 
   def add_person
@@ -99,42 +99,31 @@ class App
   end
 
   def add_rental
-    if @books.empty?
-      puts 'Currently, there are no books in this library / school!'
-      screen
-    else
-      puts 'Select a book from the following list by number:'
-      list_books
-      book_idx = gets.chomp.to_i
+    puts 'Select a book from the following list by number:'
+    list_books
+    book_idx = gets.chomp.to_i
 
-      if (0...@books.length).include?(book_idx)
-        book = @books[book_idx]
-      else
-        puts "Error adding a record. Book #{book_idx} doesn't exist"
-        screen
-      end
+    if (0...@books.length).include?(book_idx)
+      book = @books[book_idx]
+    else
+      puts "Error adding a record. Book #{book_idx} doesn't exist"
     end
 
-    if @people.empty?
-      puts 'Currently, there are no people in this library / school!'
-      screen
-    else
-      puts 'Select a person from the following list by number (not id)'
-      list_people
-      person_idx = gets.chomp.to_i
+    puts 'Select a person from the following list by number (not id)'
+    list_people
+    person_idx = gets.chomp.to_i
 
-      if (0...@people.length).include?(person_idx)
-        person = @people[person_idx]
-      else
-        puts "Error adding a record. Person #{person_idx} doesn't exist"
-        screen
-      end
+    if (0...@people.length).include?(person_idx)
+      person = @people[person_idx]
+    else
+      puts "Error adding a record. Person #{person_idx} doesn't exist"
     end
 
     print 'Date: '
     date = gets.chomp.to_s
+
     @rentals.push(Rental.new(date, book, person))
-    puts
+    puts 'Rental created successfully'
   end
 
   def list_rental
@@ -144,7 +133,7 @@ class App
     puts "Person with given id #{id} does not exist" if filtered.empty?
 
     puts 'Rentals:'
-    filtered.map { |rental| puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}" }
+    filtered.map { |rental| puts "Date: #{rental.date}, Book \"#{rental.books.title}\" by #{rental.books.author}" }
   end
 
   def run

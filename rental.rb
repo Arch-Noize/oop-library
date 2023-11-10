@@ -6,12 +6,7 @@ class Rental
     @books = books
     @person = person
 
-    books.each { |book| add_book(book) }
-    person.add_rental << self
-  end
-
-  def add_book(book)
-    @books << book
-    book.add_rental << self
+    person.rentals << self
+    books.rentals << self
   end
 end
