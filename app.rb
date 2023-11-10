@@ -17,6 +17,7 @@ class App
   def list_books
     if @books.empty?
       puts 'Currently, there are no books!'
+      screen
     else
       @books.each_with_index do |book, i|
         puts "#{i}) Title: #{book.title}, Author: #{book.author}"
@@ -27,6 +28,7 @@ class App
   def list_people
     if @people.empty?
       puts 'Currently, there are no people in this library / school!'
+      screen
     else
       @people.each_with_index do |person, i|
         puts "#{i}) [#{person.class.name}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
@@ -80,6 +82,7 @@ class App
       add_teacher
     else
       puts 'Invalid choice. Please enter a valid option.'
+      screen
     end
 
     puts 'Person created successfully'
@@ -96,24 +99,36 @@ class App
   end
 
   def add_rental
-    puts 'Select a book from the following list by number:'
-    list_books
-    book_idx = gets.chomp.to_i
-
-    if (0...@books.length).include?(book_idx)
-      book = @books[book_idx]
+    if @books.empty?
+      puts 'Currently, there are no books in this library / school!'
+      screen
     else
-      puts "Error adding a record. Book #{book_idx} doesn't exist"
+      puts 'Select a book from the following list by number:'
+      list_books
+      book_idx = gets.chomp.to_i
+
+      if (0...@books.length).include?(book_idx)
+        book = @books[book_idx]
+      else
+        puts "Error adding a record. Book #{book_idx} doesn't exist"
+        screen
+      end
     end
 
-    puts 'Select a person from the following list by number (not id)'
-    list_people
-    person_idx = gets.chomp.to_i
-
-    if (0...@people.length).include?(person_idx)
-      person = @people[person_idx]
+    if @people.empty?
+      puts 'Currently, there are no people in this library / school!'
+      screen
     else
-      puts "Error adding a record. Person #{person_idx} doesn't exist"
+      puts 'Select a person from the following list by number (not id)'
+      list_people
+      person_idx = gets.chomp.to_i
+
+      if (0...@people.length).include?(person_idx)
+        person = @people[person_idx]
+      else
+        puts "Error adding a record. Person #{person_idx} doesn't exist"
+        screen
+      end
     end
 
     print 'Date: '
