@@ -4,6 +4,7 @@ require_relative 'person'
 require_relative 'rental'
 require_relative 'student'
 require_relative 'teacher'
+require 'pry'
 
 class App
   attr_accessor :books, :people, :rentals
