@@ -34,43 +34,50 @@ class App
     end
   end
 
+  def add_student
+    puts 'Age: '
+    age = gets.chomp.to_i
+
+    puts 'Name: '
+    name = gets.chomp.to_s
+
+    puts 'Has parent permission? [Y / N]: '
+    parent_permission = gets.chomp.to_s
+
+    puts 'Class:'
+    classroom = gets.chomp.to_s
+
+    if parent_permission =~ /^[Yy]/
+      @people.push(Student.new(classroom, age, name, parent_permission: true))
+    elsif parent_permission =~ /^[Nn]/
+      @people.push(Student.new(classroom, age, name, parent_permission: false))
+    else
+      puts "Invalid choice. Please enter a valid option. (#{parent_permission})"
+    end
+  end
+
+  def add_teacher
+    puts 'Age: '
+    age = gets.chomp.to_i
+
+    puts 'Name: '
+    name = gets.chomp.to_s
+
+    puts 'Specialization: '
+    specialization = gets.chomp.to_s
+
+    @people.push(Teacher.new(specialization, age, name))
+  end
+
   def add_person
     puts 'Do you want to create a student (1) or a teacher (2)? [input the number]: '
     person_type = gets.chomp.to_i
 
     case person_type
     when 1
-      puts 'Age: '
-      age = gets.chomp.to_i
-
-      puts 'Name: '
-      name = gets.chomp.to_s
-
-      puts 'Has parent permission? [Y / N]: '
-      parent_permission = gets.chomp.to_s
-
-      puts 'Class:'
-      classroom = gets.chomp.to_s
-
-      if parent_permission =~ /^[Yy]/
-        @people.push(Student.new(classroom, age, name, parent_permission: true))
-      elsif parent_permission =~ /^[Nn]/
-        @people.push(Student.new(classroom, age, name, parent_permission: false))
-      else
-        puts "Invalid choice. Please enter a valid option. (#{parent_permission})"
-      end
-
+      add_student
     when 2
-      puts 'Age: '
-      age = gets.chomp.to_i
-
-      puts 'Name: '
-      name = gets.chomp.to_s
-
-      puts 'Specialization: '
-      specialization = gets.chomp.to_s
-
-      @people.push(Teacher.new(specialization, age, name))
+      add_teacher
     else
       puts 'Invalid choice. Please enter a valid option.'
     end
