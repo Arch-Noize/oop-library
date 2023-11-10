@@ -82,7 +82,9 @@ Clone this repository to your desired folder:
 
 ### Usage
 
-You can run this code through IRB or through VS Code with Code Runner extension
+You can run this code in a couple of different ways:
+- IRB: Inside of a terminal, you can use the `ruby main.rb` command
+- Or you can use Visual Studio's [Code Runner Extension](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) to run `main.rb`
 
 ### Run tests
 
@@ -112,7 +114,7 @@ Nor is it deployed in any other website or service.
 ~~- Adding basic classes~~
 ~~- Add Decorator designing~~
 ~~- Set up associations and relations~~
-- Add basic UI to app
+~~- Add basic UI to app~~
 - Refract my code
 - Make data be preserved
 - Add unit testing for my functions
